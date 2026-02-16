@@ -23,6 +23,7 @@ export default function Header() {
             <NavLink href="/">Global Overview</NavLink>
             <NavLink href="/regional-analysis">Regional Analysis</NavLink>
             <NavLink href="/geographic-view">Geographic View</NavLink>
+            <NavLink href="/ecg-classification">ECG Project</NavLink>
             <NavLink href="/about">About</NavLink>
           </nav>
 
@@ -54,6 +55,7 @@ export default function Header() {
             <MobileNavLink href="/" onClick={() => setIsMenuOpen(false)}>Global Overview</MobileNavLink>
             <MobileNavLink href="/regional-analysis" onClick={() => setIsMenuOpen(false)}>Regional Analysis</MobileNavLink>
             <MobileNavLink href="/geographic-view" onClick={() => setIsMenuOpen(false)}>Geographic View</MobileNavLink>
+            <MobileNavLink href="/ecg-classification" onClick={() => setIsMenuOpen(false)}>ECG Project</MobileNavLink>
             <MobileNavLink href="/about" onClick={() => setIsMenuOpen(false)}>About</MobileNavLink>
           </div>
         </div>

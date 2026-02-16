@@ -23,7 +23,6 @@ export default function Header() {
             <NavLink href="/nasa-global-temp">Global Overview</NavLink>
             <NavLink href="/nasa-global-temp/regional-analysis">Regional Analysis</NavLink>
             <NavLink href="/nasa-global-temp/geographic-view">Geographic View</NavLink>
-            <NavLink href="/ecg-classification">ECG Project</NavLink>
             <NavLink href="/nasa-global-temp/about">About</NavLink>
           </nav>
 
@@ -55,7 +54,6 @@ export default function Header() {
             <MobileNavLink href="/nasa-global-temp" onClick={() => setIsMenuOpen(false)}>Global Overview</MobileNavLink>
             <MobileNavLink href="/nasa-global-temp/regional-analysis" onClick={() => setIsMenuOpen(false)}>Regional Analysis</MobileNavLink>
             <MobileNavLink href="/nasa-global-temp/geographic-view" onClick={() => setIsMenuOpen(false)}>Geographic View</MobileNavLink>
-            <MobileNavLink href="/ecg-classification" onClick={() => setIsMenuOpen(false)}>ECG Project</MobileNavLink>
             <MobileNavLink href="/nasa-global-temp/about" onClick={() => setIsMenuOpen(false)}>About</MobileNavLink>
           </div>
         </div>

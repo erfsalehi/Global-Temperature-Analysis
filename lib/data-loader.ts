@@ -1,6 +1,6 @@
 import { TemperatureData, RegionalData } from '@/types/temperature';
 
-const BASE_PATH = '/nasa-global/temp';
+const BASE_PATH = '/nasa-global-temp';
 
 export async function getTemperatureData(dataset: string = 'global-annual'): Promise<TemperatureData> {
   // In a real production app, this might fetch from an API route or external storage.

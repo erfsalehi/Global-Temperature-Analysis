@@ -11,7 +11,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2 group">
+            <Link href="/nasa-global-temp" className="flex items-center space-x-2 group">
               <span className="text-xl font-bold tracking-tight text-gray-900 group-hover:text-primary transition-colors">
                 NASA Global Temp
               </span>
@@ -20,11 +20,11 @@ export default function Header() {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <NavLink href="/">Global Overview</NavLink>
-            <NavLink href="/regional-analysis">Regional Analysis</NavLink>
-            <NavLink href="/geographic-view">Geographic View</NavLink>
+            <NavLink href="/nasa-global-temp">Global Overview</NavLink>
+            <NavLink href="/nasa-global-temp/regional-analysis">Regional Analysis</NavLink>
+            <NavLink href="/nasa-global-temp/geographic-view">Geographic View</NavLink>
             <NavLink href="/ecg-classification">ECG Project</NavLink>
-            <NavLink href="/about">About</NavLink>
+            <NavLink href="/nasa-global-temp/about">About</NavLink>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -52,11 +52,11 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden glass-panel border-t border-white/20">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <MobileNavLink href="/" onClick={() => setIsMenuOpen(false)}>Global Overview</MobileNavLink>
-            <MobileNavLink href="/regional-analysis" onClick={() => setIsMenuOpen(false)}>Regional Analysis</MobileNavLink>
-            <MobileNavLink href="/geographic-view" onClick={() => setIsMenuOpen(false)}>Geographic View</MobileNavLink>
+            <MobileNavLink href="/nasa-global-temp" onClick={() => setIsMenuOpen(false)}>Global Overview</MobileNavLink>
+            <MobileNavLink href="/nasa-global-temp/regional-analysis" onClick={() => setIsMenuOpen(false)}>Regional Analysis</MobileNavLink>
+            <MobileNavLink href="/nasa-global-temp/geographic-view" onClick={() => setIsMenuOpen(false)}>Geographic View</MobileNavLink>
             <MobileNavLink href="/ecg-classification" onClick={() => setIsMenuOpen(false)}>ECG Project</MobileNavLink>
-            <MobileNavLink href="/about" onClick={() => setIsMenuOpen(false)}>About</MobileNavLink>
+            <MobileNavLink href="/nasa-global-temp/about" onClick={() => setIsMenuOpen(false)}>About</MobileNavLink>
           </div>
         </div>
       )}

@@ -1,5 +1,7 @@
 import { TemperatureData, RegionalData } from '@/types/temperature';
 
+const BASE_PATH = '/nasa-global/temp';
+
 export async function getTemperatureData(dataset: string = 'global-annual'): Promise<TemperatureData> {
   // In a real production app, this might fetch from an API route or external storage.
   // Since we are using static JSON files in public/data, we can fetch them directly via HTTP
@@ -7,7 +9,7 @@ export async function getTemperatureData(dataset: string = 'global-annual'): Pro
   
   // For client-side or server-side fetch wrapper:
   if (typeof window !== 'undefined') {
-    const response = await fetch(`/data/${dataset}.json`);
+    const response = await fetch(`${BASE_PATH}/data/${dataset}.json`);
     if (!response.ok) {
       throw new Error('Failed to load data');
     }
@@ -25,7 +27,7 @@ export async function getTemperatureData(dataset: string = 'global-annual'): Pro
 
 export async function getRegionalData(): Promise<RegionalData> {
   if (typeof window !== 'undefined') {
-    const response = await fetch(`/data/regional.json`);
+    const response = await fetch(`${BASE_PATH}/data/regional.json`);
     if (!response.ok) {
       throw new Error('Failed to load regional data');
     }

@@ -6,6 +6,7 @@ export default function Footer() {
           <div className="text-sm text-gray-500">
             <p>Data source: NASA GISTEMP v4</p>
             <p className="mt-1">© {new Date().getFullYear()} NASA Global Temperature Analysis</p>
+            <p className="mt-1 font-medium">Developed by <span className="text-primary font-bold">Erfan Salehi</span></p>
           </div>
           <div className="mt-4 md:mt-0">
             <a

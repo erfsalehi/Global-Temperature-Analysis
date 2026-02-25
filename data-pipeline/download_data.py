@@ -6,7 +6,8 @@ from pathlib import Path
 URLS = {
     'global': 'https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv',
     'hemispheric': 'https://data.giss.nasa.gov/gistemp/tabledata_v4/NH.Ts+dSST.csv',
-    'zonal': 'https://data.giss.nasa.gov/gistemp/tabledata_v4/ZonAnn.Ts+dSST.csv'
+    'zonal': 'https://data.giss.nasa.gov/gistemp/tabledata_v4/ZonAnn.Ts+dSST.csv',
+    'co2': 'https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_mlo.csv'
 }
 
 def download_data():

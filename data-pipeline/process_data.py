@@ -83,6 +83,25 @@ def process_zonal_data(filepath):
     
     return regional_data
 
+def process_co2_data(filepath):
+    """Process Mauna Loa CO2 data"""
+    print(f"Loading CO2 data from {filepath}")
+    # NOAA CO2 data often has comments at the top, need to inspect structure
+    # Usually standard NOAA CSVs have comments starting with #
+    df = pd.read_csv(filepath, comment='#')
+    
+    # Expected columns: year, mean, unc
+    # Rename for consistency if needed, but let's check basic structure
+    # NOAA format usually: year, mean, unc
+    
+    # Filter for valid years (1880 onwards matching temp data if possible, though CO2 starts ~1958)
+    co2_data = {
+        'years': df['year'].tolist(),
+        'co2_mean': df['mean'].tolist()
+    }
+    
+    return co2_data
+
 def generate_output_data():
     """Generate processed JSON files for frontend"""
     script_dir = Path(__file__).parent
@@ -109,10 +128,17 @@ def generate_output_data():
         # Get last valid temperature for current anomaly
         last_valid_temp = global_df['J-D'].dropna().iloc[-1]
         
+        # Process CO2 data
+        co2_file = raw_data_dir / 'co2.csv'
+        co2_data = {'years': [], 'co2_mean': []}
+        if co2_file.exists():
+            co2_data = process_co2_data(co2_file)
+        
         annual_data = {
             'years': global_df['Year'].tolist(),
             'temperatures': temperatures,
             'trend': trend_stats['trend_line'],
+            'co2': co2_data,  # Add CO2 data
             'statistics': {
                 'warming_rate': round(trend_stats['warming_rate_per_decade'], 3),
                 'r_squared': round(trend_stats['r_squared'], 4),
